@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Registration  </title>
+  {{!-- <link rel="stylesheet" href="css/style.css"> --}}
+
+  <style>
+    body {
+        margin: 0%;
+        padding: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Add padding to containers */
+  .container>h1 {
+      text-align: center;}
+      .container>p {
+      text-align: center;}
+  .container {
+    padding: 16px;
+    background-color: white;
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  
+  /* Add a blue text color to links */
+  a {
+    color: dodgerblue;
+  }
+  
+  /* Set a grey background color and center the text of the "sign in" section */
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  .button {
+  border: 1px solid green ;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+  </style>
+
+</head>
+<body>
+  <form action="/register" method="POST" autocomplete="off">
+  <input type="hidden" name="_id" value="{{student._id}}">
+    <div class="container">
+      <h1>{{viewTitle}}</h1>
+      <p>fill in this form to create student-data.</p>
+      <hr>
+
+      <label for="name"><b>name</b></label>
+      <input type="text" placeholder="Enter name" name="name" id="name" value="{{student.name}}" required>
+      
+      <label for="subjects"><b>subjects</b></label>
+      <input type="text" placeholder="Enter subjects" name="subjects" value="{{student.subjects}}">
+  
+      <label for="class"><b>class</b></label>    
+      <input type="text" placeholder="Enter class" name="class" id="email" value="{{student.class}}" required>
+      
+      <label for="society"><b>society</b></label>
+      <input type="text" placeholder="Enter society" name="society" value="{{student.society}}" >
+      <div style="text-align: center;">
+      <label for="year"><b>year</b></label>
+      <input style="text-align: center;" type="number" placeholder="Enter year" name="year" value="{{student.year}}" >
+
+      <label for="contact"><b>contact</b></label>
+      <input type="number" placeholder="Enter mobile number" name="contact" value="{{student.contact}}">
+      </div>
+     
+        	<br><br>
+          <div style="text-align: center;">     
+             <button type="submit" class="button" value="register" >submit</button><a href="/list"  class="button">view list</a>
+          </div>
+    </div>
+    
+    <div class="container signin">
+    </div>
+  </form>
+  
+</body>
+
+</html>

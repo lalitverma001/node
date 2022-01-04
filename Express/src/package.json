@@ -1,0 +1,16 @@
+{
+  "name": "exp",
+  "version": "1.0.0",
+  "description": "learn express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lalit",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "nodemon": "^2.0.9"
+  }
+}

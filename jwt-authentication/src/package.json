@@ -1,0 +1,19 @@
+{
+  "name": "learnjwt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lalit",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "mongoose": "^6.0.4",
+    "path": "^0.12.7",
+    "router": "^1.3.5",
+    "validator": "^13.6.0"
+  }
+}

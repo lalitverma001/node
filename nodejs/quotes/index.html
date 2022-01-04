@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="quotes"></div>
+    <div id="author"></div>
+    <button onclick="getQuotes()">new Quotes</button>
+
+    <script>
+        const quotes=document.getElementById("quotes");
+        const author=document.getElementById("author");
+
+        let realData="";
+        let quotData="";
+
+        const getNewQuotes=(realData)=>{
+            let rnum=Math.floor(Math.random()*50);
+          let quotData=realData[rnum];
+          quotes.innerText=`${quotData.text}`;
+          if(quotData.author==null)
+            {author.innerText="lalit";
+        }else
+        {author.innerText=`${quotData.author}`;
+     }
+           
+           
+           
+        };
+        const getQuotes = async ()=>{
+            const api="https://type.fit/api/quotes";
+            try{
+                let data= await fetch(api);
+                let realData= await data.json();
+                getNewQuotes(realData);
+                // console.log(realData[10].text);
+                // console.log(realData[10].author);
+            }
+            catch(error){            }
+        };
+        getQuotes();
+    </script>
+</body>
+</html>
